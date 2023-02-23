@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+
+import { ShopContext } from "../../App";
 
 import "./index.css";
 
 const NavLinks = () => {
+  const { count } = useContext(ShopContext);
+
   return (
     <div className="navContainer">
       <div className="links">
-        <h1>sneakers</h1>
+        <h1 className="logo">sneakers</h1>
 
         <p>Collections</p>
         <p>Men</p>
@@ -17,6 +21,7 @@ const NavLinks = () => {
       </div>
       <div className="checkout">
         <AiOutlineShoppingCart size={20} />
+        <span>{count}</span>
       </div>
     </div>
   );

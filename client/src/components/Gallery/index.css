@@ -13,9 +13,11 @@
 
 .mainImage img {
   border-radius: 10px;
+  max-width: 20rem;
 }
 
 .images img {
   margin: 0.5rem;
   border-radius: 10px;
+  max-width: 4rem;
 }

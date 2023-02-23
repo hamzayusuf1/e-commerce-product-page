@@ -2,25 +2,6 @@
   height: 100vh;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links h1 {
-  margin-right: 2rem;
-}
-
-.links p {
-  margin-right: 1rem;
-  color: gray;
-}
-
-.checkout {
-  display: flex;
-  align-items: center;
-}
-
 .mainDiv {
   display: flex;
   height: 40rem;

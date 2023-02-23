@@ -7,3 +7,42 @@
   padding: 1rem;
   border-bottom: 1px lightgray solid;
 }
+
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.links h1 {
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.links p {
+  margin-right: 1rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkout span {
+  background-color: orange;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: -3px;
+  margin-bottom: 10px;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  border-radius: 10px;
+}
+
+.logo {
+  color: black;
+  font-size: x-large;
+}
