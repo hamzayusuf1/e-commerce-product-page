@@ -1,0 +1,76 @@
+.cart {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.cartDiv {
+  border: solid 2px black;
+  height: 170px;
+  width: 30%;
+  margin-right: 50px;
+  border-radius: 3px;
+}
+
+.cartHeader {
+  height: 30px;
+  width: 275px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px black solid;
+}
+
+.cartHeader {
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.cartMain {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cartMain img {
+  width: 50px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.total {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  font-weight: bold;
+}
+
+.checkoutBtn {
+  background-color: #ffa500;
+  width: 250px;
+  margin: auto;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkoutBtn p {
+  color: whitesmoke;
+  font-size: 18px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delIcon {
+  margin-right: 8px;
+}

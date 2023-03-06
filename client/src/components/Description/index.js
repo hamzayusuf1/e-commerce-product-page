@@ -10,7 +10,7 @@ import { ShopContext } from "../../App";
 import "./index.css";
 
 const Description = () => {
-  const { count, setCount } = useContext(ShopContext);
+  const { count, setCount, setOpenModal } = useContext(ShopContext);
 
   const handleDecrement = () => {
     count > 0 ? setCount(count - 1) : setCount(count);
@@ -51,10 +51,12 @@ const Description = () => {
             onClick={handleIncrement}
           />
         </div>
-        <div className="checkoutBtn" onClick={addToCart}>
+
+        {/* <div className="addBtn" onClick={addToCart}>
           <AiOutlineShoppingCart />
           <p>Add to cart</p>
-        </div>
+        </div> */}
+        <button>Add to cart </button>
       </div>
     </div>
   );
