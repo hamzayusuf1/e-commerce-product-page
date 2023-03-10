@@ -11,8 +11,6 @@ const Gallery = () => {
 
   const isMobile = width <= 800;
 
-  console.log(width);
-
   // /images/image-product-1.jpeg
 
   const imgs = [

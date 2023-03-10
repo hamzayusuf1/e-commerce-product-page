@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import { ShopContext } from "../../App";
+import { useCartContext } from "../../contexts/CartContext";
 import Cart from "../Cart";
+import Profile from "../../assets/profile.png";
 
 import "./index.css";
 
 const NavLinks = () => {
   const { count } = useContext(ShopContext);
+  const { orderNum, showCart, setShowCart } = useCartContext();
 
-  const [show, setShow] = useState(false);
+  // const handleClick = useEffect(() => {
+  //   setShowCart(true);
+  // }, []);
 
-  console.log(show);
-
-  const closeCart = () => {
-    setShow(false);
-  };
   return (
     <>
       <div className="navContainer">
@@ -28,17 +28,23 @@ const NavLinks = () => {
           <p>About</p>
           <p>Contact</p>
         </div>
-        <div
-          className="checkout"
-          onClick={() => {
-            setShow(!show);
-          }}
-        >
-          <AiOutlineShoppingCart size={20} />
-          <span>{count}</span>
+
+        <div className="profileCart">
+          <div className="relative">
+            <div className="checkout">
+              <AiOutlineShoppingCart
+                size={20}
+                onClick={() => {
+                  setShowCart(!showCart);
+                }}
+              />
+              <span>{count}</span>
+            </div>
+            <Cart />
+          </div>
+          <img className="profilePic" src={Profile} />
         </div>
       </div>
-      <Cart show={show} closeCart={closeCart} />
     </>
   );
 };

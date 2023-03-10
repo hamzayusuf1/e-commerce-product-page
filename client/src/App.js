@@ -6,6 +6,8 @@ import NavLinks from "./components/NavLinks";
 import Screen from "./components/ScreenSize";
 import "./App.css";
 import Modal from "./components/Modal";
+import { CartContextProvider } from "./contexts/CartContext";
+import Cart from "./components/Cart";
 
 export const ShopContext = createContext();
 
@@ -30,34 +32,37 @@ function App() {
   }, [width]);
 
   return (
-    <ShopContext.Provider
-      value={{
-        count,
-        setCount,
-        currentIndex,
-        setCurrentIndex,
-        width,
-        openModal,
-        setOpenModal,
-      }}
-    >
-      <div className="all">
-        <Modal open={openModal} />
-        <div className="app">
-          <div className="nav">
-            <NavLinks />
-          </div>
-          {/* <p>
+    <CartContextProvider>
+      <ShopContext.Provider
+        value={{
+          count,
+          setCount,
+          currentIndex,
+          setCurrentIndex,
+          width,
+          openModal,
+          setOpenModal,
+        }}
+      >
+        <div className="all">
+          <Modal open={openModal} />
+
+          <div className="app">
+            <div className="nav">
+              <NavLinks />
+            </div>
+            {/* <p>
           Width: <strong>{width}</strong>
         </p> */}
 
-          <div className="mainDiv">
-            <Gallery />
-            <Description />
+            <div className="mainDiv">
+              <Gallery />
+              <Description />
+            </div>
           </div>
         </div>
-      </div>
-    </ShopContext.Provider>
+      </ShopContext.Provider>
+    </CartContextProvider>
   );
 }
 

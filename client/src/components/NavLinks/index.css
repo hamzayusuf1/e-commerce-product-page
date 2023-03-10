@@ -23,12 +23,10 @@
   color: gray;
   cursor: pointer;
 }
-
+/* 
 .checkout {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+  position: absolute;
+} */
 
 .checkout span {
   background-color: orange;
@@ -45,4 +43,24 @@
 .logo {
   color: black;
   font-size: x-large;
+}
+
+.profilePic {
+  height: 2rem;
+}
+
+.profilePic:hover {
+  border: solid 2px darkorange;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profileCart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.relative {
+  position: relative;
 }
