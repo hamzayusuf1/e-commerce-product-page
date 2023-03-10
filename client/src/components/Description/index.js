@@ -6,11 +6,13 @@ import {
 } from "react-icons/ai";
 
 import { ShopContext } from "../../App";
+import { useCartContext } from "../../contexts/CartContext";
 
 import "./index.css";
 
 const Description = () => {
-  const { count, setCount, setOpenModal } = useContext(ShopContext);
+  const { count, setCount } = useContext(ShopContext);
+  const { orderNum, setOrderNum } = useCartContext();
 
   const handleDecrement = () => {
     count > 0 ? setCount(count - 1) : setCount(count);
@@ -20,8 +22,6 @@ const Description = () => {
     setCount(count + 1);
     console.log("increase");
   };
-
-  const addToCart = () => {};
 
   return (
     <div className="allText">

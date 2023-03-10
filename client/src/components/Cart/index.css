@@ -12,6 +12,8 @@
   border-radius: 7px;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
+  background-color: white;
 }
 
 .cartHeader {
@@ -21,16 +23,17 @@
   align-items: center;
   border-bottom: lightgray 1px solid;
   height: 30px;
-}
-
-.cartHeader {
   font-size: 20px;
-  padding: 5px;
-  margin-bottom: 5px;
+  height: 10px;
 }
 
-.cartContent {
-  height: 150px;
+.cardContent {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .cartMain img {

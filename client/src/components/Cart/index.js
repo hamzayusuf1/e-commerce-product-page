@@ -6,7 +6,7 @@ import { ShopContext } from "../../App";
 import { useCartContext } from "../../contexts/CartContext";
 
 const Cart = ({ closeCart }) => {
-  const { orderNum, showCart } = useCartContext();
+  const { orderNum, showCart, setShowCart } = useCartContext();
   console.log(showCart);
   return (
     // <div className="cart">
@@ -36,17 +36,28 @@ const Cart = ({ closeCart }) => {
     // </div>
 
     <div className="cart">
-      <div className="cartDiv">
-        <div className="cartHeader">
-          <h5>Cart</h5>
-          <AiOutlineClose />
+      {showCart ? (
+        <div className="cartDiv">
+          <div className="cartHeader">
+            <h5>Cart</h5>
+            <AiOutlineClose
+              onClick={() => {
+                setShowCart(false);
+              }}
+            />
+          </div>
+          {}
         </div>
-        <div className="cardContent">
-          <p>Your cart is empty</p>
-        </div>
-      </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
+{
+  /* <div className="cardContent">
+            <p>Your cart is empty</p>
+          </div> */
+}
 
 export default Cart;
