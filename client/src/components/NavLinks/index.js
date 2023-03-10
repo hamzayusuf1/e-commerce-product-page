@@ -38,7 +38,7 @@ const NavLinks = () => {
                   setShowCart(!showCart);
                 }}
               />
-              <span>{count}</span>
+              <span>{orderNum}</span>
             </div>
             <Cart />
           </div>

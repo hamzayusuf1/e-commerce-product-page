@@ -6,7 +6,8 @@ import { ShopContext } from "../../App";
 import { useCartContext } from "../../contexts/CartContext";
 
 const Cart = ({ closeCart }) => {
-  const { orderNum, showCart, setShowCart } = useCartContext();
+  const { orderNum, setOrderNum, showCart, setShowCart, prodName, setCount } =
+    useCartContext();
   console.log(showCart);
   return (
     // <div className="cart">
@@ -46,7 +47,30 @@ const Cart = ({ closeCart }) => {
               }}
             />
           </div>
-          {}
+          {!orderNum ? (
+            <div className="cardContent">
+              <p>Your cart is empty</p>
+            </div>
+          ) : (
+            <div className="space-between">
+              <div className="cartMain">
+                <img src="images/image-product-1.jpeg" />
+                <div>
+                  <p>{prodName}</p>
+                  <p>
+                    {`$125 x ${orderNum}`} <span>{`$${125 * orderNum}`}</span>
+                  </p>
+                </div>
+              </div>
+              <AiOutlineDelete
+                size={25}
+                onClick={() => {
+                  setOrderNum(0);
+                  setCount(0);
+                }}
+              />
+            </div>
+          )}
         </div>
       ) : (
         ""

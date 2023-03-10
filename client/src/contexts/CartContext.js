@@ -9,10 +9,21 @@ export const useCartContext = () => {
 export const CartContextProvider = ({ children }) => {
   const [orderNum, setOrderNum] = useState(0);
   const [showCart, setShowCart] = useState(false);
+  const [prodName, setProdName] = useState("Fall Limited Edition Sneakers");
+  const [count, setCount] = useState(0);
 
   return (
     <CartContext.Provider
-      value={{ orderNum, setOrderNum, showCart, setShowCart }}
+      value={{
+        orderNum,
+        setOrderNum,
+        showCart,
+        setShowCart,
+        prodName,
+        setProdName,
+        count,
+        setCount,
+      }}
     >
       {children}
     </CartContext.Provider>

@@ -11,8 +11,9 @@ import { useCartContext } from "../../contexts/CartContext";
 import "./index.css";
 
 const Description = () => {
-  const { count, setCount } = useContext(ShopContext);
-  const { orderNum, setOrderNum } = useCartContext();
+  // const { count, setCount } = useContext(ShopContext);
+  const { orderNum, setOrderNum, prodName, setShowCart, count, setCount } =
+    useCartContext();
 
   const handleDecrement = () => {
     count > 0 ? setCount(count - 1) : setCount(count);
@@ -23,10 +24,17 @@ const Description = () => {
     console.log("increase");
   };
 
+  const handleCheckout = () => {
+    if (count > 0) {
+      setOrderNum(count);
+      setShowCart(true);
+    }
+  };
+
   return (
     <div className="allText">
       <p>sneaker company</p>
-      <h2>Fall Limited Edition Sneakers</h2>
+      <h2>{prodName}</h2>
       <p>
         These low profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
@@ -56,7 +64,7 @@ const Description = () => {
           <AiOutlineShoppingCart />
           <p>Add to cart</p>
         </div> */}
-        <button>Add to cart </button>
+        <button onClick={handleCheckout}>Add to cart </button>
       </div>
     </div>
   );

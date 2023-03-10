@@ -36,10 +36,26 @@
   font-weight: bold;
 }
 
+.cartMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
 .cartMain img {
-  width: 50px;
+  width: 60px;
   margin-left: 10px;
   border-radius: 5px;
+}
+
+.cartMain span {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.title {
+  margin: 0px;
 }
 
 .total {
@@ -78,7 +94,7 @@
 
 @media screen and (min-width: 800px) {
   .cart {
-    min-width: 360px;
+    min-width: 400px;
     height: 150px;
     top: 3.5rem;
     opacity: 1;
