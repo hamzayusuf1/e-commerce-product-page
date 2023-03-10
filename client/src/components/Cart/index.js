@@ -35,7 +35,17 @@ const Cart = ({ closeCart }) => {
     //   )}
     // </div>
 
-    <div className="cart">Hello</div>
+    <div className="cart">
+      <div className="cartDiv">
+        <div className="cartHeader">
+          <h5>Cart</h5>
+          <AiOutlineClose />
+        </div>
+        <div className="cardContent">
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

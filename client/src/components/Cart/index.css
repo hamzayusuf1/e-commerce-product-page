@@ -1,27 +1,26 @@
 .cart {
   position: absolute;
-  top: 5%;
+  /* transform-origin: top; */
   width: 100%;
-  border-radius: 5px;
-  border: solid gray 1px;
-  width: 200px;
+  pointer-events: auto;
+  top: 5.5rem;
+  height: 100%;
 }
 
 .cartDiv {
-  border: solid 2px black;
-  height: 170px;
-  width: 30%;
-  margin-right: 50px;
-  border-radius: 3px;
+  border: solid 1px lightgray;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cartHeader {
-  height: 30px;
-  width: 275px;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px black solid;
+  border-bottom: lightgray 1px solid;
+  height: 30px;
 }
 
 .cartHeader {
@@ -30,11 +29,8 @@
   margin-bottom: 5px;
 }
 
-.cartMain {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
+.cartContent {
+  height: 150px;
 }
 
 .cartMain img {
@@ -75,4 +71,18 @@
 
 .delIcon {
   margin-right: 8px;
+}
+
+@media screen and (min-width: 800px) {
+  .cart {
+    min-width: 360px;
+    height: 150px;
+    top: 3.5rem;
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+
+  .cartDiv {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
 }

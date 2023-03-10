@@ -30,7 +30,7 @@ const NavLinks = () => {
         </div>
 
         <div className="profileCart">
-          <div className="relative">
+          <div className="icon-and-cart">
             <div className="checkout">
               <AiOutlineShoppingCart
                 size={20}
