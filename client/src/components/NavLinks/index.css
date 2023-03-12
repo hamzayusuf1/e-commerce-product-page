@@ -13,19 +13,32 @@
   align-items: center;
 }
 
+.hamburger {
+  margin-left: -1rem;
+  margin-right: 1.5rem;
+}
+
 .links h1 {
   margin-right: 2rem;
   cursor: pointer;
 }
 
 .links p {
+  display: flex;
   margin-right: 1rem;
   color: gray;
   cursor: pointer;
+  display: none;
+}
+
+.links p:hover {
+  color: black;
+
+  border-bottom: 2px solid darkorange;
 }
 
 .checkout {
-  position: relative;
+  /* position: relative; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,5 +81,13 @@
 @media screen and (min-width: 800px) {
   .icon-and-cart {
     position: relative;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .links p {
+    display: flex;
   }
 }

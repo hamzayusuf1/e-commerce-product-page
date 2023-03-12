@@ -3,22 +3,29 @@ import React, { useState, createContext, useEffect } from "react";
 import Description from "./components/Description";
 import Gallery from "./components/Gallery";
 import NavLinks from "./components/NavLinks";
-import Screen from "./components/ScreenSize";
 import "./App.css";
 import Modal from "./components/Modal";
 import { CartContextProvider } from "./contexts/CartContext";
-import Cart from "./components/Cart";
+import Hamburger from "./components/Hamburger";
 
 export const ShopContext = createContext();
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const [width, setWidth] = useState(window.innerWidth);
 
   const [openModal, setOpenModal] = useState(false);
+
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const [links, setLinks] = useState([
+    "Collections",
+    "Men",
+    "Women",
+    "About",
+    "Contact",
+  ]);
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -35,17 +42,20 @@ function App() {
     <CartContextProvider>
       <ShopContext.Provider
         value={{
-          count,
-          setCount,
           currentIndex,
           setCurrentIndex,
           width,
           openModal,
           setOpenModal,
+          openMenu,
+          setOpenMenu,
+          links,
+          setLinks,
         }}
       >
         <div className="all">
-          <Modal open={openModal} />
+          <Modal />
+          <Hamburger />
 
           <div className="app">
             <div className="nav">

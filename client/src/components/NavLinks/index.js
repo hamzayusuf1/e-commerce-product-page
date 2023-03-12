@@ -1,16 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-import { ShopContext } from "../../App";
 import { useCartContext } from "../../contexts/CartContext";
 import Cart from "../Cart";
 import Profile from "../../assets/profile.png";
+import { ShopContext } from "../../App";
 
 import "./index.css";
 
 const NavLinks = () => {
-  const { count } = useContext(ShopContext);
   const { orderNum, showCart, setShowCart } = useCartContext();
+  const { setOpenMenu, links } = useContext(ShopContext);
 
   // const handleClick = useEffect(() => {
   //   setShowCart(true);
@@ -20,13 +21,21 @@ const NavLinks = () => {
     <>
       <div className="navContainer">
         <div className="links">
+          <GiHamburgerMenu
+            size={25}
+            className="hamburger"
+            onClick={() => {
+              setOpenMenu(true);
+            }}
+          />
+
           <h1 className="logo">sneakers</h1>
 
-          <p>Collections</p>
-          <p>Men</p>
-          <p>Women</p>
-          <p>About</p>
-          <p>Contact</p>
+          <div className="links">
+            {links.map((link) => (
+              <p key={link}>{link}</p>
+            ))}
+          </div>
         </div>
 
         <div className="profileCart">

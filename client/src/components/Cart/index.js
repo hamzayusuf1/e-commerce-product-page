@@ -5,10 +5,10 @@ import "./index.css";
 import { ShopContext } from "../../App";
 import { useCartContext } from "../../contexts/CartContext";
 
-const Cart = ({ closeCart }) => {
+const Cart = () => {
   const { orderNum, setOrderNum, showCart, setShowCart, prodName, setCount } =
     useCartContext();
-  console.log(showCart);
+
   return (
     // <div className="cart">
     //   {showCart ? (

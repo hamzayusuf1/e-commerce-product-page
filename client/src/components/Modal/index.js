@@ -10,7 +10,7 @@ const imgs = [
   { id: 3, url: "/images/image-product-4.jpeg" },
 ];
 
-const Modal = ({ open }) => {
+const Modal = () => {
   const { currentIndex, setCurrentIndex, setOpenModal, openModal } =
     useContext(ShopContext);
 

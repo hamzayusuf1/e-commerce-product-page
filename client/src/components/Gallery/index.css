@@ -31,15 +31,15 @@
   border: solid 2px orange;
   opacity: 3;
 }
-
+/* 
 .leftArrow {
   position: absolute;
   top: 50%;
-}
-.rightArrow {
+} */
+/* .rightArrow {
   position: absolute;
   top: 50%;
-}
+} */
 
 @media screen and (max-width: 800px) {
   .images {
@@ -52,7 +52,7 @@
 
   .mainImage {
     width: 100%;
-    position: relative;
+    /* position: relative; */
   }
 
   .mainImage img {
@@ -64,6 +64,7 @@
   .leftArrow {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     left: 3%;
     cursor: pointer;
     border-radius: 50%;
@@ -74,6 +75,7 @@
   .rightArrow {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     right: 3%;
     border-radius: 50%;
     border: none;
