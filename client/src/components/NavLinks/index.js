@@ -1,24 +1,60 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+
+import { useCartContext } from "../../contexts/CartContext";
+import Cart from "../Cart";
+import Profile from "../../assets/profile.png";
+import { ShopContext } from "../../App";
 
 import "./index.css";
 
 const NavLinks = () => {
-  return (
-    <div className="navContainer">
-      <div className="links">
-        <h1>sneakers</h1>
+  const { orderNum, showCart, setShowCart } = useCartContext();
+  const { setOpenMenu, links } = useContext(ShopContext);
 
-        <p>Collections</p>
-        <p>Men</p>
-        <p>Women</p>
-        <p>About</p>
-        <p>Contact</p>
+  // const handleClick = useEffect(() => {
+  //   setShowCart(true);
+  // }, []);
+
+  return (
+    <>
+      <div className="navContainer">
+        <div className="links">
+          <GiHamburgerMenu
+            size={25}
+            className="hamburger"
+            onClick={() => {
+              setOpenMenu(true);
+            }}
+          />
+
+          <h1 className="logo">sneakers</h1>
+
+          <div className="links">
+            {links.map((link) => (
+              <p key={link}>{link}</p>
+            ))}
+          </div>
+        </div>
+
+        <div className="profileCart">
+          <div className="icon-and-cart">
+            <div className="checkout">
+              <AiOutlineShoppingCart
+                size={20}
+                onClick={() => {
+                  setShowCart(!showCart);
+                }}
+              />
+              <span>{orderNum}</span>
+            </div>
+            <Cart />
+          </div>
+          <img className="profilePic" src={Profile} />
+        </div>
       </div>
-      <div className="checkout">
-        <AiOutlineShoppingCart size={20} />
-      </div>
-    </div>
+    </>
   );
 };
 

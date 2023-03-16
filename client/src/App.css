@@ -1,29 +1,23 @@
 .app {
   height: 100vh;
-}
-
-.links {
-  display: flex;
-  align-items: center;
-}
-
-.links h1 {
-  margin-right: 2rem;
-}
-
-.links p {
-  margin-right: 1rem;
-  color: gray;
-}
-
-.checkout {
-  display: flex;
-  align-items: center;
+  width: 100%;
 }
 
 .mainDiv {
   display: flex;
+  flex-direction: row;
   height: 40rem;
   width: 80%;
   margin: auto;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 800px) {
+  .mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+  }
 }
